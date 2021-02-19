@@ -1,35 +1,32 @@
 "use strict";
-//CallBack HELL
 class Usuario {
 
     retornarDadosUsuario(callback) {
         setTimeout(() => {
-            return callback(null, { nome: 'Erick Wendel', id: 123 });
+            return callback(null, { nome: 'Márcio Corrêa', id: 123 });
         });
     };
 
     retornarEndereco(idUser, callback) {
         setTimeout(() => {
-            return callback(null, { 'rua': 'dos bobos', idUser: idUser });
+            return callback(null, { 'rua': 'sem nome', idUser: idUser });
         });
     };
 
     retornarTelefone(idUser, callback) {
         setTimeout(() => {
-            return callback(null, { 'numero': '123123123', idUser: idUser });
+            return callback(null, { 'numero': '123456789', idUser: idUser });
         });
     };
 
     retornarVeiculo(idUser, callback) {
         setTimeout(() => {
-            return callback(null, { 'carro': 'Fuscao', idUser: idUser });
+            return callback(null, { 'carro': 'HB20', idUser: idUser });
         });
     };
 }
 
 
-
-//chamada
 let usuario = new Usuario();
 usuario.retornarDadosUsuario((erro, dadosUsuario) => {
     let id = dadosUsuario.id;
@@ -42,10 +39,3 @@ usuario.retornarDadosUsuario((erro, dadosUsuario) => {
         });
     });
 });
-/**
- * Saida
- * { nome: 'Erick Wendel',
-  endereco: { rua: 'dos bobos', idUser: 123 },
-  telefone: { numero: '123123123', idUser: 123 },
-  veiculo: { carro: 'Fuscao', idUser: 123 } }
- */
